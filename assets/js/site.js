@@ -110,11 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // ヘッダーのスクロール効果
+  // ヘッダーのスクロール効果（最適化版）
   const header = document.querySelector('header');
   if (header) {
     let lastScrollY = window.scrollY;
     let ticking = false;
+    let scrollTimeout;
 
     const updateHeader = () => {
       if (window.scrollY > 100) {
@@ -132,7 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    window.addEventListener('scroll', requestTick, { passive: true });
+    // スクロールイベントを最適化（throttling）
+    const handleScroll = () => {
+      if (scrollTimeout) return;
+      
+      scrollTimeout = setTimeout(() => {
+        requestTick();
+        scrollTimeout = null;
+      }, 16); // 約60fps
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
   }
 
   // Back to top ボタン
