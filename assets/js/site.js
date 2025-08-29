@@ -23,10 +23,10 @@ function updateVH() {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
   
-  // 動的ビューポート高さを初期化
-  updateVH();
-  window.addEventListener('resize', updateVH);
-  window.addEventListener('orientationchange', updateVH);
+  // 動的ビューポート高さを一時的に無効化
+  // updateVH();
+  // window.addEventListener('resize', updateVH);
+  // window.addEventListener('orientationchange', updateVH);
 
   // active表示（今いるページをナビにハイライト）
   const path = location.pathname.split('/').pop() || 'index.html';
@@ -65,15 +65,8 @@ function initializeMobileNav() {
       mobileNavToggle.setAttribute('aria-expanded', newState);
       mobileNav.setAttribute('aria-hidden', !newState);
       
-      // スクロール制御を改善
-      if (newState) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        // 適切なタイミングでスクロールを復活
-        setTimeout(() => {
-          document.body.style.overflow = '';
-        }, 300);
-      }
+      // スクロール制御を簡素化
+      document.body.style.overflow = newState ? 'hidden' : '';
     });
 
     // モバイルナビのリンクをクリックしたら閉じる
@@ -81,10 +74,7 @@ function initializeMobileNav() {
       link.addEventListener('click', () => {
         mobileNavToggle.setAttribute('aria-expanded', 'false');
         mobileNav.setAttribute('aria-hidden', 'true');
-        // スクロールを確実に復活
-        setTimeout(() => {
-          document.body.style.overflow = '';
-        }, 100);
+        document.body.style.overflow = '';
       });
     });
 
@@ -93,10 +83,7 @@ function initializeMobileNav() {
       if (e.target === mobileNav) {
         mobileNavToggle.setAttribute('aria-expanded', 'false');
         mobileNav.setAttribute('aria-hidden', 'true');
-        // スクロールを確実に復活
-        setTimeout(() => {
-          document.body.style.overflow = '';
-        }, 100);
+        document.body.style.overflow = '';
       }
     });
     
