@@ -65,15 +65,8 @@ function initializeMobileNav() {
       mobileNavToggle.setAttribute('aria-expanded', newState);
       mobileNav.setAttribute('aria-hidden', !newState);
       
-          // スクロール制御を記事の推奨方法に変更
-    if (newState) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      // 適切なタイミングでスクロールを復活
-      setTimeout(() => {
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
+          // スクロール制御を無効化
+    // document.body.style.overflow = newState ? 'hidden' : '';
     });
 
     // モバイルナビのリンクをクリックしたら閉じる
@@ -81,10 +74,8 @@ function initializeMobileNav() {
       link.addEventListener('click', () => {
         mobileNavToggle.setAttribute('aria-expanded', 'false');
         mobileNav.setAttribute('aria-hidden', 'true');
-        // 記事の推奨方法でスクロールを復活
-        setTimeout(() => {
-          document.body.style.overflow = 'auto';
-        }, 100);
+        // スクロール制御を無効化
+        // document.body.style.overflow = '';
       });
     });
 
@@ -93,10 +84,8 @@ function initializeMobileNav() {
       if (e.target === mobileNav) {
         mobileNavToggle.setAttribute('aria-expanded', 'false');
         mobileNav.setAttribute('aria-hidden', 'true');
-        // 記事の推奨方法でスクロールを復活
-        setTimeout(() => {
-          document.body.style.overflow = 'auto';
-        }, 100);
+        // スクロール制御を無効化
+        // document.body.style.overflow = '';
       }
     });
     
