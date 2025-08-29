@@ -1,0 +1,1764 @@
+/* 最小限のCSS - メインサイト用 */
+
+/* 右余白を完全に根絶するための強力な設定 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 右余白を防ぐためのシンプルな設定 */
+html, body {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+
+/* 全セクションの右余白対策 */
+section, .sec {
+  width: 100%;
+  margin: 0;
+  padding: 80px 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 各セクションの右余白対策を強化 - 疑似要素は削除 */
+
+/* 右余白を防ぐための安全な設定 */
+.hero, .cards, .service-grid, .pricing-grid, .contact-grid, .testimonials {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* より強力な右余白対策 */
+.hero-content, .card, .service-item, .pricing-card, .contact-form, .testimonial {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 重要な要素のz-indexを明示的に設定 */
+.pricing-badge, .pricing-card.featured {
+  z-index: 10 !important;
+}
+
+/* 各要素の右余白対策を強化 - 疑似要素は削除 */
+
+/* グリッドアイテムの右余白対策 */
+.cards > *, .service-grid > *, .pricing-grid > *, .contact-grid > *, .testimonials > * {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* コンテナの右余白対策 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* スマホでの右余白対策 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* スマホでの追加対策 */
+  .hero, .cards, .service-grid, .pricing-grid, .contact-grid, .testimonials {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* サービスと料金プランの右余白を完全に解消 */
+  .service-grid, .pricing-grid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* さらに小さい画面での対策 */
+  .hero, .cards, .service-grid, .pricing-grid, .contact-grid, .testimonials {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* サービスと料金プランの右余白を完全に解消（小画面） */
+  .service-grid, .pricing-grid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: 'Noto Sans JP', Arial, sans-serif;
+  line-height: 1.6;
+  background: #f7faff;
+  color: #0f172a;
+}
+
+/* スクロールアニメーション用 */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ヘッダー */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(229, 234, 240, 0.5);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1b8a5a;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.logo a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.logo img {
+  width: 26px;
+  height: 26px;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.desktop-nav a {
+  padding: 12px 20px;
+  color: #475569;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.desktop-nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.desktop-nav a:hover::before {
+  left: 0;
+}
+
+.desktop-nav a:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.desktop-nav a.active {
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  color: white;
+  box-shadow: 0 4px 12px rgba(27, 138, 90, 0.3);
+}
+
+/* モバイルメニューボタン */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: #1b8a5a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* モバイルメニューボタンのアニメーション */
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* モバイルナビゲーション */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  backdrop-filter: blur(30px);
+  z-index: 999;
+  padding: 60px 20px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav a {
+  color: #1b8a5a;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  background: rgba(27, 138, 90, 0.15);
+  border-color: #1b8a5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(27, 138, 90, 0.2);
+}
+
+/* モバイルメニューが開いている時の状態 */
+.mobile-nav.open {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ヒーローセクション */
+.hero {
+  background: url('/images/akiya.jpg') center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* スマホでのヒーローセクション調整 */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 16px;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .hero-content {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 12px;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .hero-content {
+    padding: 0 12px;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(27, 138, 90, 0.5), rgba(22, 107, 73, 0.5));
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-content {
+  max-width: 920px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 900;
+  margin: 0 0 24px;
+  line-height: 1.2;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 span {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.hero p {
+  font-size: clamp(18px, 3vw, 22px);
+  margin: 0 0 32px;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.benefits {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* セクション */
+section {
+  padding: 80px 0;
+}
+
+.sec {
+  padding: 80px 0;
+}
+
+.sec h2 {
+  text-align: center;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  color: #1b8a5a;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.sec h2::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  border-radius: 2px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* スマホでの右余白対策 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+.bg-light {
+  background: #f8fafc;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* カード */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-color: #1b8a5a;
+}
+
+.card h3 {
+  margin: 0 0 16px;
+  font-size: 22px;
+  color: #1b8a5a;
+}
+
+.card p {
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.card-icon {
+  margin-bottom: 24px;
+  display: inline-block;
+  padding: 20px;
+  background: linear-gradient(135deg, #e6f3ec, #d1f2e1);
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(27, 138, 90, 0.15);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  box-shadow: 0 12px 32px rgba(27, 138, 90, 0.3);
+}
+
+.card:hover .card-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.card-icon img {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 4px rgba(27,138,90,0.3));
+  transition: all 0.3s ease;
+}
+
+/* ボタン */
+.cta-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  height: 56px;
+  box-sizing: border-box;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  color: white;
+  box-shadow: 0 8px 24px rgba(27, 138, 90, 0.3);
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(27, 138, 90, 0.4);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.cta-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* フッター */
+footer {
+  background: #0f172a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  header {
+    padding: 12px 16px;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }
+  
+  .mobile-nav.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 40vh;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .sec {
+    padding: 60px 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-options {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .benefits {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .benefit {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* さらに小さい画面の対応 */
+@media (max-width: 480px) {
+  header {
+    padding: 8px 12px;
+  }
+  
+  .hero {
+    min-height: 35vh;
+    padding: 40px 16px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .sec {
+    padding: 40px 16px;
+  }
+
+  section {
+    padding: 40px 16px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .pricing-card {
+    padding: 24px 20px;
+  }
+
+  .service-item {
+    padding: 24px 20px;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .pricing-highlight {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .highlight-icon {
+    font-size: 24px;
+    padding: 12px;
+  }
+
+  .service-option {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .option-icon {
+    font-size: 24px;
+    padding: 12px;
+  }
+
+  .cta-btn {
+    padding: 14px 24px;
+    font-size: 16px;
+    height: 52px;
+    box-sizing: border-box;
+  }
+  
+  /* モバイルメニューのさらなる調整 */
+  .mobile-nav {
+    padding: 50px 16px 16px;
+    gap: 8px;
+  }
+  
+  .mobile-nav a {
+    font-size: 16px;
+    padding: 10px 16px;
+    max-width: 260px;
+  }
+
+  .price {
+    font-size: 36px;
+  }
+
+  .price span {
+    font-size: 16px;
+  }
+}
+
+/* サービスグリッド */
+.service-grid {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-top: 60px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* サービスグリッドの右余白対策を強化 */
+.service-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.service-item {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(27, 138, 90, 0.05), rgba(22, 107, 73, 0.05));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-item:hover::before {
+  opacity: 1;
+}
+
+.service-item:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-color: #1b8a5a;
+}
+
+.service-number {
+  display: inline-grid;
+  place-items: center;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(27, 138, 90, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-number::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+}
+
+.service-item:hover .service-number::before {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.service-item h3 {
+  margin: 0 0 16px;
+  font-size: 22px;
+  color: #1b8a5a;
+}
+
+.service-item p {
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.service-item ul {
+  color: #64748b;
+  padding-left: 20px;
+}
+
+.service-item li {
+  margin-bottom: 8px;
+}
+
+/* FAQ */
+.faq-item {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.faq-q {
+  padding: 24px;
+  background: #f8fafc;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #1b8a5a;
+}
+
+.faq-icon {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1b8a5a;
+}
+
+.faq-a {
+  padding: 0 24px 24px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* リード文 */
+.lead {
+  font-size: 18px;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* 料金プラン - 超豪華版 */
+.pricing-info {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 48px;
+}
+
+.pricing-highlight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pricing-highlight:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.15);
+  border-color: #1b8a5a;
+}
+
+.highlight-icon {
+  font-size: 32px;
+  padding: 16px;
+  background: linear-gradient(135deg, #e6f3ec, #d1f2e1);
+  border-radius: 50%;
+  color: #1b8a5a;
+  flex-shrink: 0;
+}
+
+.highlight-text h4 {
+  color: #1b8a5a;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.highlight-text p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pricing-grid {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-top: 60px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  align-items: stretch;
+}
+
+/* 料金プラングリッドの右余白対策を強化 */
+.pricing-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pricing-card {
+  background: white;
+  border: 2px solid #e5eaf0;
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.pricing-card:hover::before {
+  transform: scaleX(1);
+}
+
+.pricing-card:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.3);
+  border-color: #1b8a5a;
+}
+
+.pricing-card.featured {
+  border-color: #1b8a5a;
+  background: linear-gradient(135deg, #f8fafc, #e6f3ec);
+  box-shadow: 0 20px 40px -12px rgba(27, 138, 90, 0.2);
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 40px 80px -16px rgba(27, 138, 90, 0.4);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  animation: pulse 2s infinite;
+  z-index: 10;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  }
+  50% { 
+    transform: scale(1.08); 
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+  }
+}
+
+.pricing-header {
+  margin-bottom: 32px;
+  flex-shrink: 0;
+}
+
+.pricing-header h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1b8a5a;
+  margin-bottom: 16px;
+  margin-left: 60px;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.price span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.pricing-features {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #475569;
+  font-size: 16px;
+  position: relative;
+  padding-left: 32px;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pricing-card .cta-btn {
+  width: 100%;
+  text-align: center;
+  padding: 18px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+/* 追加サービス */
+.additional-services {
+  margin-top: 64px;
+  text-align: center;
+}
+
+.additional-services h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1b8a5a;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.additional-services h3::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  border-radius: 2px;
+}
+
+.service-options {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 32px;
+}
+
+.service-option {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.service-option:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.15);
+  border-color: #1b8a5a;
+}
+
+.service-option {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.option-icon {
+  font-size: 28px;
+  padding: 16px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-radius: 50%;
+  color: #d97706;
+  flex-shrink: 0;
+}
+
+.option-content h4 {
+  color: #1b8a5a;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.option-content p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.option-price {
+  color: #dc2626;
+  font-size: 16px;
+  font-weight: 700;
+  background: #fef2f2;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #fecaca;
+}
+
+/* お問い合わせ */
+.contact-grid {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 48px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+}
+
+.contact-icon {
+  font-size: 32px;
+  padding: 12px;
+  background: #e6f3ec;
+  border-radius: 50%;
+  color: #1b8a5a;
+}
+
+.contact-method strong {
+  color: #1b8a5a;
+  font-size: 16px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.contact-method p {
+  color: #475569;
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.contact-method small {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* フォーム */
+.contact-form {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1b8a5a;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e5eaf0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1b8a5a;
+  box-shadow: 0 0 0 3px rgba(27,138,90,0.1);
+}
+
+/* お客様の声 */
+.testimonials {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin-top: 48px;
+}
+
+.testimonial {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 120px;
+  color: #e6f3ec;
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonial:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #1b8a5a;
+}
+
+.testimonial-content {
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #475569;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-info strong {
+  display: block;
+  color: #1b8a5a;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.author-info span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* トップに戻るボタン */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  border: 2px solid #1b8a5a;
+  background: #1b8a5a;
+  color: white;
+  box-shadow: 0 8px 24px rgba(27,138,90,0.3);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 120;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.to-top:hover {
+  background: #166b49;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(27,138,90,0.4);
+}
+
+/* 各ページを華やかにするための特別なスタイル */
+
+/* ページヘッダーの華やかさ */
+.page-hero {
+  background: linear-gradient(135deg, rgba(27, 138, 90, 0.9), rgba(22, 107, 73, 0.9));
+  color: white;
+  text-align: center;
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/akiya.jpg') center/cover;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero h1 {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 900;
+  margin: 0 0 24px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.page-hero .lead {
+  font-size: clamp(18px, 3vw, 24px);
+  opacity: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+/* セクションの華やかさ */
+.sec {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+.sec::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1b8a5a, #166b49, #1b8a5a);
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* カードの華やかさ */
+.card, .service-item, .pricing-card, .contact-method-card, .faq-item, .flow-item {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 40px;
+}
+
+.card::before, .service-item::before, .pricing-card::before, .contact-method-card::before, .faq-item::before, .flow-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.card:hover::before, .service-item:hover::before, .pricing-card:hover::before, .contact-method-card:hover::before, .faq-item:hover::before, .flow-item:hover::before {
+  left: 100%;
+}
+
+.card:hover, .service-item:hover, .pricing-card:hover, .contact-method-card:hover, .faq-item:hover, .flow-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(27, 138, 90, 0.25);
+}
+
+/* ボタンの華やかさ */
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.cta-btn:hover::before {
+  left: 100%;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(27, 138, 90, 0.3);
+}
+
+/* アイコンの華やかさ */
+.overview-icon, .service-number, .flow-number, .method-icon, .faq-icon, .highlight-icon, .option-icon {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.overview-icon:hover, .service-number:hover, .flow-number:hover, .method-icon:hover, .faq-icon:hover, .highlight-icon:hover, .option-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: brightness(1.2);
+}
+
+/* テーブルの華やかさ */
+.company-info table {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.company-info th {
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  color: white;
+  font-weight: 700;
+  padding: 20px;
+  text-align: left;
+}
+
+.company-info td {
+  padding: 20px;
+  border-bottom: 1px solid #e5eaf0;
+  transition: background-color 0.3s ease;
+}
+
+.company-info tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* フォームの華やかさ */
+.contact-form input, .contact-form textarea, .contact-form select {
+  transition: all 0.3s ease;
+  border: 2px solid #e5eaf0;
+}
+
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+  border-color: #1b8a5a;
+  box-shadow: 0 0 0 3px rgba(27, 138, 90, 0.1);
+  transform: translateY(-2px);
+}
+
+/* アニメーションの強化 */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 特別なエフェクト */
+.pricing-card.featured {
+  position: relative;
+  overflow: visible;
+}
+
+.pricing-card.featured::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #1b8a5a, #166b49, #1b8a5a);
+  border-radius: 20px;
+  z-index: -1;
+  animation: border-glow 3s ease-in-out infinite;
+}
+
+@keyframes border-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* フッターの華やかさ */
+footer {
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/akiya.jpg') center/cover;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* モバイルでの華やかさ */
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 80px 0;
+  }
+  
+  .page-hero h1 {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+  
+  .sec::before {
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 60px 0;
+  }
+  
+  .page-hero h1 {
+    font-size: clamp(24px, 10vw, 36px);
+  }
+}

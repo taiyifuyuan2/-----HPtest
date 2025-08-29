@@ -5,15 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>鹿児島の空き家管理｜安心の巡回＆写真報告</title>
   <meta name="description" content="鹿児島の空き家を地元スタッフがしっかり見守り。月1回の巡回・通風・清掃。台風後は即日確認。写真付き詳細レポートで安心。">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style-minimal.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body data-page="home">
-  <div id="site-header"></div>
+          <!-- ヘッダー -->
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo/akiya_logo_mokumoku.svg" alt="鹿児島 空き家見守り" width="26" height="26">
+            <span>鹿児島 空き家見守り</span>
+          </a>
+        </div>
+        <nav aria-label="主要ナビゲーション" class="desktop-nav">
+          <a href="index.html">ホーム</a>
+          <a href="service.html">サービス</a>
+          <a href="process.html">流れ</a>
+          <a href="pricing.html">料金</a>
+          <a href="voices.html">口コミ</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">相談</a>
+          <a href="access.html">アクセス</a>
+        </nav>
+        
+        <!-- モバイルメニューボタン -->
+        <button class="mobile-menu-btn" aria-label="メニューを開く">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <!-- モバイルメニュー -->
+        <nav class="mobile-nav" aria-label="モバイルナビゲーション">
+          <a href="index.html">ホーム</a>
+          <a href="service.html">サービス</a>
+          <a href="process.html">流れ</a>
+          <a href="pricing.html">料金</a>
+          <a href="voices.html">口コミ</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">相談</a>
+          <a href="access.html">アクセス</a>
+        </nav>
+      </div>
+    </header>
 
-  <!-- ヒーローセクション -->
+    <!-- ヒーローセクション -->
   <section class="hero">
     <div class="hero-content">
       <div class="tag">鹿児島の空き家を、地元スタッフがしっかり見守り</div>
@@ -106,22 +145,28 @@
     </div>
   </section>
 
-  <!-- Before/After スライダー -->
-  <section class="sec container">
-    <h2>施工事例</h2>
-    <p class="lead">火山灰で汚れた空き家が、きれいに生まれ変わります</p>
-    <div class="ba">
-      <img src="images/before.png" alt="施工前" class="ba-img ba-before">
-      <img src="images/after.png" alt="施工後" class="ba-img ba-after">
-      <input type="range" class="ba-handle" min="0" max="100" value="50">
-    </div>
-    <p class="text-center text-muted">スライダーを動かして施工前後の違いをご確認ください</p>
-  </section>
+
 
   <!-- 料金プラン -->
   <section class="sec container bg-light">
     <h2>料金プラン</h2>
     <p class="lead">ご予算に合わせて選べる3つのプラン</p>
+    <div class="pricing-info">
+      <div class="pricing-highlight">
+        <div class="highlight-icon">💎</div>
+        <div class="highlight-text">
+          <h4>初期費用・解約金は一切なし！</h4>
+          <p>月額料金のみで、いつでも解約可能。安心してご利用いただけます。</p>
+        </div>
+      </div>
+      <div class="pricing-highlight">
+        <div class="highlight-icon">🎯</div>
+        <div class="highlight-text">
+          <h4>プラン変更も柔軟に対応</h4>
+          <p>ご要望に応じて、いつでもプランの変更や追加サービスが可能です。</p>
+        </div>
+      </div>
+    </div>
     <div class="pricing-grid">
       <div class="pricing-card reveal">
         <div class="pricing-header">
@@ -167,6 +212,38 @@
         <a href="contact.html#form" class="cta-btn primary">お申し込み</a>
       </div>
     </div>
+    
+    <!-- 追加サービス -->
+    <div class="additional-services">
+      <h3>追加サービス（オプション）</h3>
+      <div class="service-options">
+        <div class="service-option">
+          <div class="option-icon">🌿</div>
+          <div class="option-content">
+            <h4>庭木の剪定</h4>
+            <p>月1回の基本剪定</p>
+            <span class="option-price">+¥3,000/月</span>
+          </div>
+        </div>
+        <div class="service-option">
+          <div class="option-icon">🧹</div>
+          <div class="option-content">
+            <h4>深層清掃</h4>
+            <p>3ヶ月に1回の徹底清掃</p>
+            <span class="option-price">+¥8,000/回</span>
+          </div>
+        </div>
+        <div class="service-option">
+          <div class="option-icon">📸</div>
+          <div class="option-content">
+            <h4>動画レポート</h4>
+            <p>写真に加えて動画も提供</p>
+            <span class="option-price">+¥2,000/月</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="text-center">
       <a href="pricing.html" class="cta-btn secondary">詳細な料金を見る</a>
     </div>
@@ -306,7 +383,7 @@
   </section>
 
   <button class="to-top" id="toTop" aria-label="上へ">↑</button>
-  <div id="site-footer"></div>
-  <script src="assets/js/site.js"></script>
+      <!-- <div id="site-footer"></div> -->
+  <script src="assets/js/site-minimal.js"></script>
 </body>
 </html>
