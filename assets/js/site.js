@@ -5,6 +5,11 @@
     if (!el) return;
     const res = await fetch(url);
     el.innerHTML = await res.text();
+    
+    // ヘッダーが読み込まれた後にモバイルナビゲーションを初期化
+    if (sel === '#site-header') {
+      initializeMobileNav();
+    }
   };
   await load('#site-header', 'partials/header.html');
   await load('#site-footer', 'partials/footer.html');
@@ -30,36 +35,22 @@
   });
 })();
 
-// ===== Ripple effect =====
-document.addEventListener('click', e => {
-  const btn = e.target.closest('.cta-btn.primary');
-  if (!btn) return;
-
-  const rect = btn.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  const ink = document.createElement('span');
-  ink.className = 'ripple-ink';
-  ink.style.left = x + 'px';
-  ink.style.top  = y + 'px';
-  btn.appendChild(ink);
-
-  ink.addEventListener('animationend', ()=> ink.remove());
-});
-
-// ===== ページ別初期化 =====
-document.addEventListener('DOMContentLoaded', () => {
-  const page = document.body.dataset.page;
-
-  // モバイルナビゲーション
+// モバイルナビゲーション初期化関数
+function initializeMobileNav() {
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
   
   if (mobileNavToggle && mobileNav) {
-    mobileNavToggle.addEventListener('click', () => {
+    console.log('モバイルナビゲーションを初期化中...'); // デバッグ用
+    
+    mobileNavToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
       const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
       const newState = !isExpanded;
+      
+      console.log('メニューボタンがクリックされました。状態:', newState); // デバッグ用
       
       mobileNavToggle.setAttribute('aria-expanded', newState);
       mobileNav.setAttribute('aria-hidden', !newState);
@@ -85,7 +76,39 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
       }
     });
+    
+    console.log('モバイルナビゲーションの初期化が完了しました'); // デバッグ用
+  } else {
+    console.log('モバイルナビゲーション要素が見つかりません:', { 
+      toggle: !!mobileNavToggle, 
+      nav: !!mobileNav 
+    }); // デバッグ用
   }
+}
+
+// ===== Ripple effect =====
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.cta-btn.primary');
+  if (!btn) return;
+
+  const rect = btn.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const ink = document.createElement('span');
+  ink.className = 'ripple-ink';
+  ink.style.left = x + 'px';
+  ink.style.top  = y + 'px';
+  btn.appendChild(ink);
+
+  ink.addEventListener('animationend', ()=> ink.remove());
+});
+
+// ===== ページ別初期化 =====
+document.addEventListener('DOMContentLoaded', () => {
+  const page = document.body.dataset.page;
+
+
 
   // ヘッダーのスクロール効果
   const header = document.querySelector('header');

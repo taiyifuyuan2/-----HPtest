@@ -21,6 +21,8 @@
 html{ 
   scroll-behavior:smooth; 
   font-size: 16px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 *{ 
   box-sizing:border-box; 
@@ -35,6 +37,9 @@ body{
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 img{ max-width:100%; height:auto; display:block; }
 a{ color:inherit; text-decoration: none; }
@@ -112,13 +117,14 @@ header.scrolled{
   display: none;
   background: none;
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   position: relative;
   cursor: pointer;
-  padding: 0;
-  border-radius: 4px;
+  padding: 8px;
+  border-radius: 8px;
   transition: all .3s ease;
+  z-index: 1000;
 }
 
 .mobile-nav-toggle:hover{
@@ -175,15 +181,17 @@ header.scrolled{
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
-  z-index: 99;
+  z-index: 999;
   opacity: 0;
   visibility: hidden;
   transition: all .3s ease;
+  pointer-events: none;
 }
 
 .mobile-nav[aria-hidden="false"]{
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav-content{
@@ -198,6 +206,8 @@ header.scrolled{
   gap: 16px;
   transform: translateY(-20px);
   transition: transform .3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 16px 16px;
 }
 
 .mobile-nav[aria-hidden="false"] .mobile-nav-content{
@@ -230,7 +240,7 @@ header.scrolled{
   min-height:100vh;
   display:flex; align-items:center; justify-content:center;
   color:#fff; text-align:center;
-  overflow: hidden;
+  overflow: visible;
 }
 .hero::before{
   content:""; position:absolute; inset:0;
@@ -246,6 +256,10 @@ header.scrolled{
 
 /* スマホでの背景画像最適化 */
 @media(max-width:768px){
+  .hero{
+    min-height: 80vh;
+  }
+  
   .hero::before{
     background-position: center 25%;
     filter:brightness(.35) saturate(1.1);
@@ -257,6 +271,10 @@ header.scrolled{
 }
 
 @media(max-width:480px){
+  .hero{
+    min-height: 70vh;
+  }
+  
   .hero::before{
     background-position: center 35%;
     filter:brightness(.3) saturate(1.0);
