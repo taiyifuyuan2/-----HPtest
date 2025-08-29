@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>料金プラン｜鹿児島の空き家管理</title>
+  <meta name="description" content="鹿児島の空き家管理サービスの料金プランをご紹介。ベーシック、スタンダード、プレミアムの3つのプランからお選びいただけます。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body data-page="pricing">
+  <div id="site-header"></div>
+
+  <!-- ページヘッダー -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>料金プラン</h1>
+      <p class="lead">ご予算に合わせて選べる3つのプラン</p>
+    </div>
+  </section>
+
+  <!-- 料金プラン -->
+  <section class="sec container">
+    <h2>料金プラン</h2>
+    <p class="lead">空き家の規模やご要望に合わせて、最適なプランをお選びいただけます</p>
+    
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-header">
+          <h3>ベーシック</h3>
+          <div class="price">¥8,800<span>/月</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li>月1回の定期巡回</li>
+          <li>写真10枚のレポート</li>
+          <li>基本点検・通風</li>
+          <li>軽微な清掃</li>
+          <li>ポストの整理</li>
+        </ul>
+        <div class="pricing-note">
+          <p>※ 建物面積：50㎡以下</p>
+        </div>
+        <a href="contact.html#form" class="cta-btn primary">お申し込み</a>
+      </div>
+      
+      <div class="pricing-card featured reveal">
+        <div class="pricing-badge">人気</div>
+        <div class="pricing-header">
+          <h3>スタンダード</h3>
+          <div class="price">¥12,800<span>/月</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li>月1回の定期巡回</li>
+          <li>写真15枚の詳細レポート</li>
+          <li>基本点検・通風</li>
+          <li>火山灰除去対応</li>
+          <li>緊急時対応</li>
+          <li>庭の軽微な手入れ</li>
+        </ul>
+        <div class="pricing-note">
+          <p>※ 建物面積：100㎡以下</p>
+        </div>
+        <a href="contact.html#form" class="cta-btn primary">お申し込み</a>
+      </div>
+      
+      <div class="pricing-card reveal">
+        <div class="pricing-header">
+          <h3>プレミアム</h3>
+          <div class="price">¥18,800<span>/月</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li>月2回の定期巡回</li>
+          <li>写真20枚の詳細レポート</li>
+          <li>基本点検・通風</li>
+          <li>火山灰除去対応</li>
+          <li>緊急時対応</li>
+          <li>草刈り・庭木の剪定</li>
+          <li>軽微な修理対応</li>
+        </ul>
+        <div class="pricing-note">
+          <p>※ 建物面積：制限なし</p>
+        </div>
+        <a href="contact.html#form" class="cta-btn primary">お申し込み</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金計算ツール -->
+  <section class="sec container bg-light">
+    <h2>料金計算ツール</h2>
+    <p class="lead">お客様の空き家の状況に合わせて、概算料金を計算できます</p>
+    
+    <div class="calculator-container">
+      <div class="calculator-form reveal">
+        <h3>空き家の情報を入力してください</h3>
+        
+        <div class="calc-section">
+          <h4>基本情報</h4>
+          <div class="form-group">
+            <label for="building-type">建物の種類</label>
+            <select id="building-type" name="building-type">
+              <option value="house">一戸建て</option>
+              <option value="apartment">マンション・アパート</option>
+              <option value="commercial">店舗・事務所</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="building-size">建物面積</label>
+            <select id="building-size" name="building-size">
+              <option value="small">50㎡以下</option>
+              <option value="medium">51㎡〜100㎡</option>
+              <option value="large">101㎡〜200㎡</option>
+              <option value="xlarge">201㎡以上</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="calc-section">
+          <h4>追加サービス</h4>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="garden" value="garden">
+              庭の手入れが必要
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="repair" value="repair">
+              軽微な修理が必要
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="mail" value="mail">
+              郵便物の管理が必要
+            </label>
+          </div>
+        </div>
+        
+        <div class="calc-section">
+          <h4>契約期間</h4>
+          <div class="toggle">
+            <button type="button" id="mode-month" class="active">月額</button>
+            <button type="button" id="mode-year">年額（10%OFF）</button>
+          </div>
+        </div>
+        
+        <div class="calc-result">
+          <div class="result-price">
+            <span class="result-label">概算料金</span>
+            <span class="result-amount">¥<span id="est-total">0</span></span>
+            <span class="result-unit" id="est-unit">/月</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-info reveal">
+        <h3>料金について</h3>
+        <div class="info-item">
+          <h4>基本料金について</h4>
+          <p>月1回の定期巡回が基本サービスに含まれています。建物の規模や追加サービスによって料金が変わります。</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>追加料金について</h4>
+          <p>庭の手入れや軽微な修理など、基本サービス以外の作業は別途料金が発生します。</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>年額契約のメリット</h4>
+          <p>年額契約の場合は、月額の10%OFFでご利用いただけます。長期でご利用いただくお客様にお得です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- オプション料金 -->
+  <section class="sec container">
+    <h2>オプション料金</h2>
+    <p class="lead">基本サービスに加えて、ご要望に応じて追加サービスも提供しています</p>
+    
+    <div class="option-pricing">
+      <div class="option-item reveal">
+        <div class="option-icon">🌿</div>
+        <h3>庭木・草刈り</h3>
+        <p>庭の手入れや草刈りを行います。</p>
+        <div class="option-price">¥5,000〜/回</div>
+        <ul>
+          <li>草刈り（100㎡まで）</li>
+          <li>庭木の剪定</li>
+          <li>落ち葉の除去</li>
+        </ul>
+      </div>
+      
+      <div class="option-item reveal">
+        <div class="option-icon">🔧</div>
+        <h3>軽微な修理</h3>
+        <p>ドアの調整や窓の修理など。</p>
+        <div class="option-price">¥3,000〜/回</div>
+        <ul>
+          <li>ドアの調整</li>
+          <li>窓の修理</li>
+          <li>水道の修理</li>
+        </ul>
+      </div>
+      
+      <div class="option-item reveal">
+        <div class="option-icon">📦</div>
+        <h3>郵便物管理</h3>
+        <p>ポストの郵便物を整理します。</p>
+        <div class="option-price">¥2,000〜/回</div>
+        <ul>
+          <li>郵便物の整理</li>
+          <li>重要書類の確認</li>
+          <li>ポストの清掃</li>
+        </ul>
+      </div>
+      
+      <div class="option-item reveal">
+        <div class="option-icon">🏠</div>
+        <h3>空き家見学対応</h3>
+        <p>不動産会社や見学者の立ち会い。</p>
+        <div class="option-price">¥8,000〜/回</div>
+        <ul>
+          <li>見学者の立ち会い</li>
+          <li>建物の説明</li>
+          <li>見学後の清掃</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金に関するよくある質問 -->
+  <section class="sec container bg-light">
+    <h2>料金に関するよくある質問</h2>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          <span>Q. 料金は建物の大きさで変わりますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <p>はい、建物の面積によって料金が変わります。ベーシックプランは50㎡以下、スタンダードプランは100㎡以下が目安です。</p>
+        </div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          <span>Q. 追加の巡回は可能ですか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <p>はい、可能です。追加巡回は1回につき¥3,000〜で承っております。ご希望の際は事前にご連絡ください。</p>
+        </div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          <span>Q. 年額契約の解約は可能ですか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <p>はい、可能です。年額契約でも1ヶ月前までにお申し出いただければ、解約していただけます。</p>
+        </div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-q">
+          <span>Q. 緊急時の追加料金はありますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <p>スタンダードプラン以上では、緊急時の対応料金は含まれています。ベーシックプランの場合は別途料金が発生します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お申し込み -->
+  <section class="sec container">
+    <h2>料金プランについて詳しく知りたい</h2>
+    <p class="lead">ご質問やご相談がございましたら、お気軽にお問い合わせください</p>
+    <div class="text-center">
+      <a href="contact.html" class="cta-btn primary">お問い合わせする</a>
+      <a href="service.html" class="cta-btn secondary">サービス詳細を見る</a>
+    </div>
+  </section>
+
+  <button class="to-top" id="toTop" aria-label="上へ">↑</button>
+  <div id="site-footer"></div>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
