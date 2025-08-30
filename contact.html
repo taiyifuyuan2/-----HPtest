@@ -65,49 +65,81 @@
       <h2>お問い合わせ方法</h2>
       <p class="lead">お客様のご都合に合わせて、お好きな方法でお問い合わせください</p>
       
-      <div class="contact-methods-main">
-        <div class="contact-method-card reveal">
-          <div class="method-icon">📞</div>
-          <h3>お電話</h3>
-          <div class="method-detail">
-            <p class="phone-number">099-XXX-XXXX</p>
-            <p class="phone-hours">平日 9:00-18:00</p>
-            <p class="method-description">お急ぎの場合はお電話が最も早く対応できます。空き家の状況やご要望をお聞かせください。</p>
+      <div class="contact-methods-enhanced">
+        <div class="contact-method-card enhanced reveal">
+          <div class="method-visual">
+            <div class="method-icon-animated">📞</div>
+            <div class="method-bg-image phone-bg"></div>
           </div>
-          <a href="tel:099-XXX-XXXX" class="cta-btn primary">今すぐ電話する</a>
+          <div class="method-content">
+            <h3>お電話</h3>
+            <div class="method-detail">
+              <p class="phone-number">099-XXX-XXXX</p>
+              <p class="phone-hours">平日 9:00-18:00</p>
+              <p class="method-description">お急ぎの場合はお電話が最も早く対応できます。空き家の状況やご要望をお聞かせください。</p>
+            </div>
+            <a href="tel:099-XXX-XXXX" class="cta-btn primary hover-effect">
+              <span class="btn-icon">📞</span>
+              今すぐ電話する
+            </a>
+          </div>
         </div>
         
-        <div class="contact-method-card reveal">
-          <div class="method-icon">💬</div>
-          <h3>LINE</h3>
-          <div class="method-detail">
-            <p class="line-id">@yourid</p>
-            <p class="line-hours">24時間受付</p>
-            <p class="method-description">簡単な質問や相談はLINEが便利です。写真も送れるので、空き家の状況を詳しくお聞かせいただけます。</p>
+        <div class="contact-method-card enhanced reveal">
+          <div class="method-visual">
+            <div class="method-icon-animated">💬</div>
+            <div class="method-bg-image line-bg"></div>
           </div>
-          <a href="https://line.me/ti/p/@yourid" target="_blank" rel="noopener" class="cta-btn secondary">LINEで相談する</a>
+          <div class="method-content">
+            <h3>LINE</h3>
+            <div class="method-detail">
+              <p class="line-id">@yourid</p>
+              <p class="line-hours">24時間受付</p>
+              <p class="method-description">簡単な質問や相談はLINEが便利です。写真も送れるので、空き家の状況を詳しくお聞かせいただけます。</p>
+            </div>
+            <a href="https://line.me/ti/p/@yourid" target="_blank" rel="noopener" class="cta-btn primary hover-effect">
+              <span class="btn-icon">💬</span>
+              LINEで相談する
+            </a>
+          </div>
         </div>
         
-        <div class="contact-method-card reveal">
-          <div class="method-icon">📧</div>
-          <h3>メール</h3>
-          <div class="method-detail">
-            <p class="email-address">info@example.com</p>
-            <p class="email-hours">24時間受付</p>
-            <p class="method-description">詳細なご相談や見積もり依頼はメールがおすすめです。空き家の詳細情報をお送りください。</p>
+        <div class="contact-method-card enhanced reveal">
+          <div class="method-visual">
+            <div class="method-icon-animated">📧</div>
+            <div class="method-bg-image email-bg"></div>
           </div>
-          <a href="mailto:info@example.com" class="cta-btn secondary">メールで相談する</a>
+          <div class="method-content">
+            <h3>メール</h3>
+            <div class="method-detail">
+              <p class="email-address">info@example.com</p>
+              <p class="email-hours">24時間受付</p>
+              <p class="method-description">詳細なご相談や見積もり依頼はメールがおすすめです。空き家の詳細情報をお送りください。</p>
+            </div>
+            <a href="mailto:info@example.com" class="cta-btn primary hover-effect">
+              <span class="btn-icon">📧</span>
+              メールで相談する
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- お問い合わせフォーム -->
     <section class="sec container bg-light" id="form">
-      <h2>お問い合わせフォーム</h2>
-      <p class="lead">以下のフォームに必要事項をご記入の上、お送りください</p>
+      <div class="form-header-section">
+        <div class="form-header-content">
+          <h2>お問い合わせフォーム</h2>
+          <p class="lead">以下のフォームに必要事項をご記入の上、お送りください</p>
+          <div class="form-header-visual">
+            <div class="form-icon">📝</div>
+            <div class="form-decoration"></div>
+          </div>
+        </div>
+      </div>
       
-      <div class="contact-form-container">
-        <form class="contact-form-main" action="#" method="POST">
+      <div class="contact-form-container enhanced">
+        <form class="contact-form-main enhanced" action="#" method="POST">
           <div class="form-section">
             <h3>基本情報</h3>
             <div class="form-row">
@@ -180,26 +212,26 @@
           <div class="form-section">
             <h3>ご希望のサービス</h3>
             <div class="form-group">
-              <label>利用プラン</label>
-              <div class="checkbox-group">
-                <label class="checkbox-item">
-                  <input type="checkbox" name="plan" value="basic">
-                  <span class="checkmark"></span>
+              <label>利用プラン <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="plan" value="basic" required>
+                  <span class="radio-custom"></span>
                   ベーシックプラン（月1回巡回）
                 </label>
-                <label class="checkbox-item">
-                  <input type="checkbox" name="plan" value="standard">
-                  <span class="checkmark"></span>
+                <label class="radio-item">
+                  <input type="radio" name="plan" value="standard">
+                  <span class="radio-custom"></span>
                   スタンダードプラン（月1回巡回＋緊急対応）
                 </label>
-                <label class="checkbox-item">
-                  <input type="checkbox" name="plan" value="premium">
-                  <span class="checkmark"></span>
+                <label class="radio-item">
+                  <input type="radio" name="plan" value="premium">
+                  <span class="radio-custom"></span>
                   プレミアムプラン（月2回巡回＋庭の手入れ）
                 </label>
-                <label class="checkbox-item">
-                  <input type="checkbox" name="plan" value="custom">
-                  <span class="checkmark"></span>
+                <label class="radio-item">
+                  <input type="radio" name="plan" value="custom">
+                  <span class="radio-custom"></span>
                   カスタムプラン（ご要望に応じて）
                 </label>
               </div>
@@ -306,8 +338,8 @@
           <div class="form-submit">
             <button type="submit" class="cta-btn primary">お問い合わせを送信する</button>
             <p class="form-note">* は必須項目です。送信後、24時間以内にご連絡いたします。</p>
-          </div>
-        </form>
+    </div>
+  </form>
       </div>
     </section>
 
@@ -358,71 +390,150 @@
       <h2>お問い合わせ後の流れ</h2>
       <p class="lead">お問い合わせいただいてから、サービス開始までの流れをご説明します</p>
       
-      <div class="contact-flow">
-        <div class="flow-step reveal">
-          <div class="step-number">01</div>
-          <h3>お問い合わせ受付</h3>
-          <p>フォームやお電話でお問い合わせいただきます。24時間以内にご連絡いたします。</p>
+      <div class="contact-flow enhanced">
+        <div class="flow-step enhanced reveal">
+          <div class="step-visual">
+            <div class="step-number">01</div>
+            <div class="step-icon">📞</div>
+          </div>
+          <div class="step-content">
+            <h3>お問い合わせ受付</h3>
+            <p>フォームやお電話でお問い合わせいただきます。24時間以内にご連絡いたします。</p>
+          </div>
         </div>
         
-        <div class="flow-step reveal">
-          <div class="step-number">02</div>
-          <h3>詳細ヒアリング</h3>
-          <p>空き家の状況やご要望について、詳しくお聞かせください。</p>
+        <div class="flow-step enhanced reveal">
+          <div class="step-visual">
+            <div class="step-number">02</div>
+            <div class="step-icon">💬</div>
+          </div>
+          <div class="step-content">
+            <h3>詳細ヒアリング</h3>
+            <p>空き家の状況やご要望について、詳しくお聞かせください。</p>
+          </div>
         </div>
         
-        <div class="flow-step reveal">
-          <div class="step-number">03</div>
-          <h3>現地確認・見積もり</h3>
-          <p>空き家の現地を確認し、最適なサービスプランと料金をご提案いたします。</p>
+        <div class="flow-step enhanced reveal">
+          <div class="step-visual">
+            <div class="step-number">03</div>
+            <div class="step-icon">🏠</div>
+          </div>
+          <div class="step-content">
+            <h3>現地確認・見積もり</h3>
+            <p>空き家の現地を確認し、最適なサービスプランと料金をご提案いたします。</p>
+          </div>
         </div>
         
-        <div class="flow-step reveal">
-          <div class="step-number">04</div>
-          <h3>契約・サービス開始</h3>
-          <p>サービス内容と料金にご納得いただけましたら、契約書にサインしていただき、サービスを開始いたします。</p>
+        <div class="flow-step enhanced reveal">
+          <div class="step-visual">
+            <div class="step-number">04</div>
+            <div class="step-icon">✅</div>
+          </div>
+          <div class="step-content">
+            <h3>契約・サービス開始</h3>
+            <p>サービス内容と料金にご納得いただけましたら、契約書にサインしていただき、サービスを開始いたします。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- お問い合わせ -->
+    <!-- よくある質問 -->
     <section class="sec container">
-      <h2>まずはお気軽にお問い合わせください</h2>
-      <p class="lead">空き家の管理でお困りのことがございましたら、お気軽にご相談ください</p>
-      <div class="text-center">
-        <a href="#form" class="cta-btn primary">お問い合わせフォームへ</a>
-        <a href="service.html" class="cta-btn secondary">サービス詳細を見る</a>
+      <h2>お問い合わせに関するよくある質問</h2>
+      <p class="lead">お問い合わせ方法や手続きについての質問にお答えします</p>
+      
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <span>Q. お問い合わせからどのくらいで返信が来ますか？</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>通常24時間以内にご連絡いたします。緊急の場合は、より早く対応いたします。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <span>Q. 電話でのお問い合わせは可能ですか？</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>はい、お電話でのお問い合わせも可能です。平日9:00-17:00の間でお受けしています。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <span>Q. 見積もりは無料ですか？</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>はい、見積もりは完全無料です。空き家の状況を確認し、最適なサービスプランをご提案いたします。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <span>Q. 契約前に現地確認は必要ですか？</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            <p>はい、正確な見積もりとサービスプランの提案のために、現地確認をお願いしています。無料で行います。</p>
+          </div>
+        </div>
       </div>
     </section>
+
+
 
     <button class="to-top" id="toTop" aria-label="上へ">↑</button>
     <!-- フッター -->
     <footer>
       <div class="container">
         <div class="footer-content">
-          <div class="footer-section">
-            <h3>鹿児島 空き家見守り</h3>
-            <p>鹿児島の空き家を地元スタッフがしっかり見守ります</p>
+          <div class="footer-main">
+            <div class="footer-brand">
+              <h3>鹿児島 空き家見守り</h3>
+              <p>鹿児島の空き家を地元スタッフがしっかり見守ります</p>
+              <div class="footer-social">
+                <span class="social-label">お気軽にご相談ください</span>
+              </div>
+            </div>
           </div>
-          <div class="footer-section">
-            <h4>サービス</h4>
-            <ul>
-              <li><a href="service.html">定期巡回</a></li>
-              <li><a href="service.html">通風・換気</a></li>
-              <li><a href="service.html">清掃・メンテナンス</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>お問い合わせ</h4>
-            <ul>
-              <li><a href="contact.html">お問い合わせ</a></li>
-              <li><a href="pricing.html">料金プラン</a></li>
-              <li><a href="faq.html">よくある質問</a></li>
-            </ul>
+          
+          <div class="footer-links-grid">
+            <div class="footer-section">
+              <h4>サービス</h4>
+              <ul class="footer-links">
+                <li><a href="service.html">定期巡回</a></li>
+                <li><a href="service.html">通風・換気</a></li>
+                <li><a href="service.html">清掃・メンテナンス</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-section">
+              <h4>お問い合わせ</h4>
+              <ul class="footer-links">
+                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="pricing.html">料金プラン</a></li>
+                <li><a href="faq.html">よくある質問</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-section">
+              <h4>その他</h4>
+              <ul class="footer-links">
+                <li><a href="process.html">利用の流れ</a></li>
+                <li><a href="voices.html">お客様の声</a></li>
+                <li><a href="access.html">アクセス</a></li>
+              </ul>
+            </div>
           </div>
         </div>
+        
         <div class="footer-bottom">
-          <p><div id="site-footer"></div>copy; <span id="year">2025</span> 鹿児島 空き家見守り. All rights reserved.</p>
+          <p>&copy; <span id="year">2025</span> 鹿児島 空き家見守り. All rights reserved.</p>
         </div>
       </div>
     </footer>
