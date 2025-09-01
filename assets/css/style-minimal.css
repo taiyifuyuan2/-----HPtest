@@ -334,6 +334,17 @@ header.scrolled {
   margin: 0;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
 /* スマホでのヒーローセクション調整 */
 @media (max-width: 768px) {
   .hero {
@@ -363,7 +374,7 @@ header.scrolled {
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 1000px;
   width: 100%;
   box-sizing: border-box;
@@ -372,14 +383,23 @@ header.scrolled {
 
 .tag {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
   margin-bottom: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(27, 138, 90, 0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(27, 138, 90, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .hero-content {
@@ -1807,16 +1827,16 @@ section {
 }
 
 .cta-btn.secondary {
-  background: transparent;
+  background: linear-gradient(135deg, #1b8a5a, #166b49);
   color: white;
-  border-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(27, 138, 90, 0.3);
 }
 
 .cta-btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #166b49, #1b8a5a);
   transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(27, 138, 90, 0.4);
 }
 
 /* フッター */
@@ -2630,7 +2650,7 @@ footer {
 .testimonials {
   display: grid;
   gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 48px;
 }
 
@@ -2673,6 +2693,16 @@ footer {
   line-height: 1.7;
   color: #475569;
   font-style: italic;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 口コミ: タブレットでも1列にして見切れ防止 */
+@media (max-width: 900px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 .testimonial-author {
@@ -3964,7 +3994,13 @@ footer .footer-links a {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
+
+/* 追加サービスの絵文字アイコンは非表示（全端末） */
+.service-option .option-icon { display: none !important; }
 
 .service-option:hover {
   transform: translateY(-8px);
@@ -3973,9 +4009,10 @@ footer .footer-links a {
 }
 
 .option-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
+  font-size: 40px;
+  margin-bottom: 0;
   display: block;
+  flex-shrink: 0;
 }
 
 .service-option h4 {
@@ -3983,6 +4020,8 @@ footer .footer-links a {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 12px;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .service-option p {
@@ -3991,16 +4030,29 @@ footer .footer-links a {
   line-height: 1.6;
 }
 
+.option-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
 .option-price {
-  background: linear-gradient(135deg, #1b8a5a, #166b49);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 16px;
-  display: inline-block;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(27, 138, 90, 0.3);
+  background: #ffffff;
+  color: #1b8a5a;
+  padding: 16px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 18px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+  border: 1px solid #e2e8f0;
+  min-width: 120px;
 }
 
 .service-option ul {
@@ -4038,6 +4090,31 @@ footer .footer-links a {
   
   .service-option {
     padding: 24px;
+    gap: 16px;
+    display: block;
+  }
+  /* アイコンはスマホでは非表示にして情報を縦に並べる */
+  .option-icon { display: none; }
+  
+  /* タイトル→説明→料金の順で縦並び */
+  .service-option .option-content {
+    display: block !important;
+  }
+  .service-option h4 { font-size: 18px; margin-bottom: 6px; }
+  .service-option p { font-size: 14px; margin: 0 0 10px; }
+  .service-option h4 { font-size: 18px; margin-bottom: 4px; }
+  .service-option p { font-size: 14px; margin: 0 0 12px; }
+  
+  /* 料金は左寄せ・横書き。カード幅で自然に折り返し */
+  .service-option .option-price {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    text-align: left !important;
+    margin-top: 4px !important;
   }
 }
 
